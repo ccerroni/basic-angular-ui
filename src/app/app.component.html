@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="navigation col-lg-12">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        
+        <div class="navbar-header">
+          <a [routerLink]="['/home']" class="navbar-brand">{{title}}</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li>
+              <a [routerLink]="['/home']">
+                <span class="glyphicon glyphicon-home"></span>
+                Home</a>
+            </li>
+            <li><a [routerLink]="['/animals']">
+              <span class="glyphicon glyphicon-star"></span>
+              Animals</a></li>
+            <li><a [routerLink]="['/keepers']">
+              <span class="glyphicon glyphicon-user"></span>
+              Keepers</a></li>
+            <li><a [routerLink]="['/shop']">
+              <span class="glyphicon glyphicon-gift"></span>
+              Shop</a></li>
+            <li><a [routerLink]="['/contact']">
+              <span class="glyphicon glyphicon-comment"></span>
+              Contact</a></li>
+          </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1">
+      <router-outlet></router-outlet>
+  </div>
+</div>

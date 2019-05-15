@@ -1,0 +1,15 @@
+.navbar-default .navbar-nav {
+  li {
+    a {
+      border-bottom: 3px solid transparent;
+    }
+    a:hover {
+      transition:all 300ms;
+      border-bottom: 3px solid yellowgreen;
+    }
+
+    .active {
+      border-bottom: 3px solid orange;
+    }
+  }
+}
