@@ -9,22 +9,35 @@
 
         <ul class="nav navbar-nav">
             <li>
-              <a [routerLink]="['/home']">
+              <a [routerLink]="['/home']" [routerLinkActive]="['active']">
                 <span class="glyphicon glyphicon-home"></span>
                 Home</a>
             </li>
-            <li><a [routerLink]="['/animals']">
+            <li><a [routerLink]="['/animals']" [routerLinkActive]="['active']">
               <span class="glyphicon glyphicon-star"></span>
               Animals</a></li>
-            <li><a [routerLink]="['/keepers']">
+            <li><a [routerLink]="['/keepers']" [routerLinkActive]="['active']">
               <span class="glyphicon glyphicon-user"></span>
               Keepers</a></li>
-            <li><a [routerLink]="['/shop']">
+            <li><a [routerLink]="['/shop']" [routerLinkActive]="['active']">
               <span class="glyphicon glyphicon-gift"></span>
               Shop</a></li>
-            <li><a [routerLink]="['/contact']">
+            <li><a [routerLink]="['/contact']" [routerLinkActive]="['active']">
               <span class="glyphicon glyphicon-comment"></span>
               Contact</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a [routerLink]="['/register']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-user"></span>
+                Register</a>
+            </li>
+            <li>
+              <a [routerLink]="['/login']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-log-in"></span>
+                Login</a>
+            </li>
           </ul>
       </div>
     </nav>

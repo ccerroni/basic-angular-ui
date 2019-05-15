@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { User } from "../models/user.model";
+import {  UserService } from "../services/user.service";
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  providers: [UserService]
 })
 export class RegisterComponent implements OnInit {
   public title: String;
@@ -17,7 +19,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    private formBuilder: FormBuilder) 
+    private formBuilder: FormBuilder,
+    private userService: UserService) 
     { 
       this.title = 'Register';
       this.user = new User('', '', '', '', '', 'ROLE_USER', '');
@@ -35,6 +38,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registerForm);
+    this.userService.register();
     this.isFormSubmitted= true;
   }
 
