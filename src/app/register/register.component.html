@@ -4,28 +4,42 @@
   </div>
 
   <div class="col-lg-6">
+    <div class="alert alert-success" *ngIf="status == 'success'">
+      You have been registered succesfully, please use your email: {{user.email}} to login.
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'fail'">
+      Error: We cannot register you, please try again
+    </div>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <p>
         <label>Name</label>
         <input type="text" placeholder="Name" formControlName="name" class="form-control">
-        <span *ngIf="registerForm.controls.name.errors && registerForm.controls.name.errors.required && isFormSubmitted" class="text-danger">The name is required</span>
+        <span *ngIf="registerForm.controls.name.errors && registerForm.controls.name.errors.required && isFormSubmitted"
+          class="text-danger">The name is required</span>
       </p>
       <p>
         <label>Last Name</label>
         <input type="text" placeholder="Last Name" formControlName="lastName" class="form-control">
-        <span *ngIf="registerForm.controls.lastName.errors && registerForm.controls.lastName.errors.required && isFormSubmitted" class="text-danger">The Last Name is required</span>
+        <span
+          *ngIf="registerForm.controls.lastName.errors && registerForm.controls.lastName.errors.required && isFormSubmitted"
+          class="text-danger">The Last Name is required</span>
       </p>
       <p>
         <label>Email</label>
         <input type="email" placeholder="Email" formControlName="email" class="form-control" autocomplete="off">
-        <span *ngIf="registerForm.controls.email.errors && registerForm.controls.email.errors.required && isFormSubmitted" class="text-danger">The Email is required</span>
-        <span *ngIf="registerForm.controls.email.errors && registerForm.controls.email.errors.email && isFormSubmitted" class="text-danger">The Email is invalid</span>
+        <span
+          *ngIf="registerForm.controls.email.errors && registerForm.controls.email.errors.required && isFormSubmitted"
+          class="text-danger">The Email is required</span>
+        <span *ngIf="registerForm.controls.email.errors && registerForm.controls.email.errors.email && isFormSubmitted"
+          class="text-danger">The Email is invalid</span>
       </p>
       <p>
         <label>Password</label>
         <input type="password" placeholder="Password" formControlName="password" class="form-control"
           autocomplete="off">
-          <span *ngIf="registerForm.controls.password.errors && registerForm.controls.password.errors.required && isFormSubmitted" class="text-danger">The Password is required</span>
+        <span
+          *ngIf="registerForm.controls.password.errors && registerForm.controls.password.errors.required && isFormSubmitted"
+          class="text-danger">The Password is required</span>
       </p>
       <input type="submit" value="{{title}}" class="btn btn-primary" [disabled]="registerForm.invalid">
     </form>
