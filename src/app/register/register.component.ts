@@ -7,14 +7,14 @@ import {  UserService } from "../services/user.service";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
-  providers: [UserService]
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   public title: String;
   public registerForm: FormGroup;
   public user: User;
-  isFormSubmitted: boolean;
+  public isFormSubmitted: boolean;
+  public status: string;
 
   constructor(
     private _route: ActivatedRoute,
@@ -37,8 +37,24 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm);
-    this.userService.register();
+    if(this.registerForm.valid) {
+      this.userService.register(this.registerForm.value).subscribe((res: any) => {
+        if (res.user && res.user._id) {
+          this.user = res.user;
+          this.status='success';
+        }
+        else {
+          this.user = new User('', '', '', '', '', 'ROLE_USER', '');
+          this.status='fail';
+        }
+        
+        return res;
+      },
+      error => {
+        console.log('An error occours');
+      });
+    }
+    
     this.isFormSubmitted= true;
   }
 

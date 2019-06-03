@@ -13,7 +13,13 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { UploadService } from "./services/upload.service";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+//Services
 
 
 @NgModule({
@@ -27,15 +33,21 @@ import { ReactiveFormsModule } from '@angular/forms';
     ErrorComponent,
     AnimalComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    UserService,
+    UploadService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
