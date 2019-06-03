@@ -9,6 +9,7 @@ import { ErrorComponent } from './error/error.component';
 import { AnimalComponent } from './animal/animal.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'profile', component: UserEditComponent },
   { path: '**', component: ErrorComponent }
 ];
 

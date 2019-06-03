@@ -12,4 +12,19 @@
       border-bottom: 3px solid orange;
     }
   }
+
+  .btn-profile {
+    background-color:transparent;
+    margin-top: 7px;
+  }
+
+  .dropdown-menu {
+    min-width: auto;
+  }
+
+  .avatar {
+    width: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
 }

@@ -15,6 +15,9 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { UploadService } from "./services/upload.service";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 //Services
 
@@ -30,17 +33,20 @@ import { HttpClientModule } from '@angular/common/http';
     ErrorComponent,
     AnimalComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [
-    UserService
+    UserService,
+    UploadService
   ],
   bootstrap: [AppComponent]
 })

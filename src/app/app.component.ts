@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit, DoCheck {
   public title: string;
   public identity;
+  public urlImage: string;
 
   constructor(private userService: UserService, private _router: Router) {
     this.title= 'BASICAPP';
@@ -17,10 +18,12 @@ export class AppComponent implements OnInit, DoCheck {
 
   ngOnInit() {
     this.identity = this.userService.getIdentity();
+    this.urlImage = this.userService.getUrlImage();
   }
 
   ngDoCheck() {
     this.identity = this.userService.getIdentity();
+    this.urlImage = this.userService.getUrlImage();
   }
 
   logout() {
