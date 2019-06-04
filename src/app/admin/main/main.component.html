@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>{{title}}</h1>
+  </div>
+
+
+  <div class="container">
+    <ngb-tabset type="pills" class="tabs-menu">
+      <ngb-tab title="List">
+        <ng-template ngbTabContent>
+          <app-list></app-list>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Add">
+        <ng-template ngbTabContent>
+          <app-add></app-add>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Information">
+        <ng-template ngbTabContent>
+          <h2>Information</h2>
+          <p>here will be the information</p>
+          <app-edit></app-edit>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+
+
+
+</div>

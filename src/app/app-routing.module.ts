@@ -22,8 +22,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: UserEditComponent },
-  { path: '**', component: ErrorComponent }
+  { path: 'profile', component: UserEditComponent }
+  // { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({

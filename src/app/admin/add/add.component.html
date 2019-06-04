@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>{{title}}</h3>
+  </div>
+  <div class="col-lg-10">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <p>
+        <label>Name</label>
+        <input type="text" placeholder="Name" formControlName="name" class="form-control">
+        <span *ngIf="addForm.controls.name.errors && addForm.controls.name.errors.required && isFormSubmitted"
+          class="text-danger">The name is required</span>
+      </p>
+      <p>
+        <label>Description</label>
+        <textarea placeholder="Description" formControlName="description" class="form-control"></textarea>
+      </p>
+      <p>
+        <label>Year</label>
+        <input type="number" placeholder="Year" formControlName="year" class="form-control" autocomplete="off">
+        <span *ngIf="addForm.controls.year.errors && addForm.controls.year.errors.required && isFormSubmitted"
+          class="text-danger">The Year is required</span>
+      </p>
+      <div>
+        <p>
+          <label>Upload your Image</label>
+          <input type="file" placeholder="Image" formControlName="image" class="form-control"
+            (change)="fileChangeEvent($event)">
+        </p>
+      </div>
+      <input type="submit" value="Add Animal" class="btn btn-primary" [disabled]="addForm.invalid">
+    </form>
+  </div>
+</div>

@@ -17,7 +17,8 @@ import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UploadService } from "./services/upload.service";
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminModule } from "./admin/admin.module";
 
 //Services
 
@@ -42,6 +43,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AdminModule,
     NgbModule.forRoot()
   ],
   providers: [

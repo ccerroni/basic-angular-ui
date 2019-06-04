@@ -43,16 +43,20 @@
 
           <ul class="nav navbar-nav navbar-right" *ngIf="identity">
             <div ngbDropdown class="dropdown">
-              <button class="btn btn-outline-primary btn-profile" id="dropdownBasic1"
-                ngbDropdownToggle>
-                <img *ngIf="identity.image" class="avatar" src="{{ urlImage }}"/>
-                <img *ngIf="!identity.image" class="avatar" src="../../assets/images/user.png"/>
+              <button class="btn btn-outline-primary btn-profile" id="dropdownBasic1" ngbDropdownToggle>
+                <img *ngIf="identity.image" class="avatar" src="{{ urlImage }}" />
+                <img *ngIf="!identity.image" class="avatar" src="../../assets/images/user.png" />
                 {{identity.name}}</button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <div class="dropdown-item">
-                  <a [routerLink]="['/profile']" [routerLinkActive]="['active']" class="btn btn-link" >
+                  <a [routerLink]="['/profile']" [routerLinkActive]="['active']" class="btn btn-link">
                     <span class="glyphicon glyphicon-cog"></span>
                     Profile</a>
+                </div>
+                <div class="dropdown-item" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+                  <a [routerLink]="['/admin-panel']" [routerLinkActive]="['active']" class="btn btn-link">
+                    <span class="glyphicon glyphicon-tasks"></span>
+                    Admin</a>
                 </div>
                 <div class="dropdown-item">
                   <a (click)="logout()" class="btn btn-link">
@@ -60,6 +64,7 @@
                     Logout
                   </a>
                 </div>
+
               </div>
             </div>
           </ul>
